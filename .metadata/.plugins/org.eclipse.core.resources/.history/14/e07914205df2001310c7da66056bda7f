@@ -40,9 +40,12 @@ public class Solution {
        }
    }
 	
-	//unit testing
 	public static void main(String[] args){
 		List<ListNode> ListNodeList = new ArrayList<ListNode>();
+		ListNode a = new ListNode(1);
+		ListNode b = new ListNode(2);
+		ListNode c = new ListNode(3);
+		ListNode d = new ListNode(4);
 		
 		for(int i=0;i<10000;i++){
 			ListNodeList.add(new ListNode(i));
@@ -52,12 +55,19 @@ public class Solution {
 			if(i==ListNodeList.size()-1) ListNodeList.get(i).next = null;
 			else ListNodeList.get(i).next = ListNodeList.get(i+1);
 		}
-
-		System.out.println("hasCycle:"+Solution.hasCycle(ListNodeList.get(0)));
 		
-		ListNodeList.get(9998).next = ListNodeList.get(5);
 		
 		System.out.println("hasCycle:"+Solution.hasCycle(ListNodeList.get(0)));
-
+		
+//		a.next = b;
+//		b.next = c;
+//		c.next = d;
+//		d.next = a;
+//		
+//		System.out.println("hasCycle:"+Solution.hasCycle(a));
+//		
+//		d.next = null;
+//		
+//		System.out.println("hasCycle:"+Solution.hasCycle(a));
 	}
 }
