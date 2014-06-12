@@ -46,13 +46,13 @@ public class Solution {
 		if(head == null) return false;
 		final ListNode first = head;
 	
-		Set<Integer> ListNodeSet = new TreeSet<Integer>();
+		Set<ListNode> ListNodeSet = new TreeSet<ListNode>(){{add(first);}};
 	
 		while(true){
 			if(head.next == null) return false;
 			else{
 				head = head.next;
-				if(!ListNodeSet.add(head.val)) return true;
+				if(!ListNodeSet.add(head)) return true;
 			}	   
 	   }
 	}

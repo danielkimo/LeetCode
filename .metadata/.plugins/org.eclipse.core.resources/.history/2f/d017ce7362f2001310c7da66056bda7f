@@ -46,7 +46,7 @@ public class Solution {
 		if(head == null) return false;
 		final ListNode first = head;
 	
-		Set<Integer> ListNodeSet = new TreeSet<Integer>();
+		Set<Integer> ListNodeSet = new TreeSet<Integer>(){{add(Integer.valueOf(first.val));}};
 	
 		while(true){
 			if(head.next == null) return false;

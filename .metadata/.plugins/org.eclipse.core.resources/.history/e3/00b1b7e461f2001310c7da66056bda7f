@@ -26,9 +26,9 @@ Else either of the two references(or their next) will become null.
 
 public class Solution {
 	public static boolean hasCycle(ListNode head) {
-	   if(head == null) return false;
+		if(head == null) return false;
 		
-	   final ListNode first = head;
+		final ListNode first = head;
 	   
        List<ListNode> ListNodeList = new ArrayList<ListNode>(){{add(first);}};
 
@@ -44,16 +44,16 @@ public class Solution {
 	
 	public static boolean hasCycle2(ListNode head) {
 		if(head == null) return false;
-		final ListNode first = head;
+	   final ListNode first = head;
 	
-		Set<Integer> ListNodeSet = new TreeSet<Integer>();
+	   Set<Integer> ListNodeSet = new TreeSet<Integer>(){{add(Integer.valueOf(first.val));}};
 	
-		while(true){
-			if(head.next == null) return false;
-			else{
-				head = head.next;
-				if(!ListNodeSet.add(head.val)) return true;
-			}	   
+	   while(true){
+		   if(head.next == null) return false;
+		   else{
+			   head = head.next;
+			   if(!ListNodeSet.add(head.val)) return true;
+		   }	   
 	   }
 	}
 	
@@ -61,7 +61,7 @@ public class Solution {
 	public static void main(String[] args){
 		List<ListNode> ListNodeList = new ArrayList<ListNode>();
 		
-		for(int i=0;i<10000;i++){
+		for(int i=0;i<1000;i++){
 			ListNodeList.add(new ListNode(i));
 		}
 		
