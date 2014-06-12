@@ -1,0 +1,41 @@
+package Textbook;
+
+ //Definition for singly-linked list.
+ class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) {
+         val = x;
+         next = null;
+     }
+ }
+ 
+/*
+ *  Algorithm
+ If the linked list has a loop they will definitely meet.
+ Else either of the two references(or their next) will become null.
+ */
+ 
+public class Solution {
+	public boolean hasCycle(ListNode head) {
+        ListNode tortoise = head, hare = head;
+        
+        if(head == null) return false;
+        
+        while(true){
+            if(tortoise.next == null) return false;
+            else tortoise = tortoise.next;
+            
+            if(hare.next == null) return false;
+            else hare = hare.next.next;
+            
+            if(tortoise == null || hare == null) return false;
+            
+            if(tortoise == hare) return true;
+        }
+    }
+	
+	public static void main(String[] args){
+		
+	}
+}
